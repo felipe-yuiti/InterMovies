@@ -7,21 +7,9 @@
 
 import UIKit
 
-class HearderViewTableViewCell: UITableViewCell {
+class HearderViewTableViewCell: UITableViewHeaderFooterView {
 
     @IBOutlet weak var leftHearderLabel: UILabel!
-    
     @IBOutlet weak var rightHearderLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
 }

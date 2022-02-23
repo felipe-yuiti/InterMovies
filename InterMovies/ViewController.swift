@@ -26,30 +26,25 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
-        
-//        hearder = [HeardOnTable.init(title: "Continuar assistindo", subTitle: "Ver todos")]
-        
+        tableView.delegate = self
+        tableView.register(HearderViewTableViewCell.self, forHeaderFooterViewReuseIdentifier: "Header")
     }
 }
 
-extension ViewController: UITableViewDataSource {
-//        func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//            return hearder[section].title
-//        }
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return hearder.count
     }
     
-    private func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
-        return heightOfHearder
-    }
-    private func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
-        let hearderView = Bundle.main.loadNibNamed("HearderViewTableViewCell", owner: self, options: nil)?.first as! HearderViewTableViewCell
-
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let hearderView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "Header") as! HearderViewTableViewCell
         hearderView.leftHearderLabel.text = hearder[section].title
         hearderView.rightHearderLabel.text = hearder[section].subTitle
 
@@ -62,5 +57,4 @@ extension ViewController: UITableViewDataSource {
         cell.timeLabel.text = "AAAAAArooo"
         return cell
     }
-
 }
