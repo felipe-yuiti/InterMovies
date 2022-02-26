@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AaJ-QN-oof">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HPr-Ln-doF">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -369,7 +369,7 @@ Esperimente por 7 dias.</string>
             </objects>
             <point key="canvasLocation" x="1117" y="599"/>
         </scene>
-        <!--View Controller-->
+        <!--Movies-->
         <scene sceneID="xKU-Ia-Pib">
             <objects>
                 <viewController id="AaJ-QN-oof" customClass="ViewController" customModule="InterMovies" customModuleProvider="target" sceneMemberID="viewController">
@@ -378,7 +378,7 @@ Esperimente por 7 dias.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Rfc-hf-HNZ">
-                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Continuarassistindo" rowHeight="214" id="iPW-Sd-o8S" customClass="MovieCell" customModule="InterMovies" customModuleProvider="target">
@@ -456,13 +456,32 @@ Esperimente por 7 dias.</string>
                             <constraint firstItem="Rfc-hf-HNZ" firstAttribute="top" secondItem="eC2-kW-Ihm" secondAttribute="top" id="ya9-R6-oLc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Movies" id="k84-oO-Qo0"/>
                     <connections>
                         <outlet property="tableView" destination="Rfc-hf-HNZ" id="2Ua-CT-VI6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ohy-UY-Es3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1240" y="-928"/>
+            <point key="canvasLocation" x="3098.4615384615386" y="-928.43601895734594"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9SA-yZ-ebg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HPr-Ln-doF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dxx-06-Mca">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AaJ-QN-oof" kind="relationship" relationship="rootViewController" id="j32-FO-y63"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p7S-OU-JeY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2169.2307692307691" y="-928.43601895734594"/>
         </scene>
     </scenes>
     <resources>
