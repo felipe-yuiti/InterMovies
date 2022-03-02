@@ -42,28 +42,25 @@ class ViewController: UIViewController {
                    HeardOnTable(title: "salada", subTitle: "lulu")]
     var heightOfHearder: CGFloat = 44
     
-    override var prefersStatusBarHidden: Bool {
-        return false
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationController?.setToolbarHidden(true, animated: true)
-        
-        // tableView Setup
+    private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         let nib = UINib(nibName: "HeaderView", bundle: nil)
         tableView.register(nib, forHeaderFooterViewReuseIdentifier: "HeaderView")
-        
-        // serachBar Setup
+    }
+    
+    private func setupSearch() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Pesquise seu filme..."
         navigationItem.searchController = searchController
         listaDeFilmesFiltradas = listaDeFilmes
-        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()               
+        setupTableView()
+        setupSearch()
     }
 }
 
