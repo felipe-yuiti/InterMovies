@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F9A006427C9A42600BEA4A2 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9A006327C9A42600BEA4A2 /* HeaderView.xib */; };
+		B976673C27D6679C003D8646 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976673B27D6679C003D8646 /* CollectionViewCell.swift */; };
 		B98EC58127B72A64003F99A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98EC58027B72A64003F99A3 /* AppDelegate.swift */; };
 		B98EC58327B72A64003F99A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98EC58227B72A64003F99A3 /* SceneDelegate.swift */; };
 		B98EC58527B72A64003F99A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98EC58427B72A64003F99A3 /* ViewController.swift */; };
@@ -18,10 +19,12 @@
 		B98EC59B27BB2925003F99A3 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98EC59A27BB2925003F99A3 /* MovieCell.swift */; };
 		B98EC5A027BFE61A003F99A3 /* HearderViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98EC59E27BFE61A003F99A3 /* HearderViewTableViewCell.swift */; };
 		B98EC5A327C526FC003F99A3 /* InternaMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98EC5A227C526FC003F99A3 /* InternaMovies.swift */; };
+		B9BB03E827EA92F400375457 /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB03E727EA92F400375457 /* SelfSizedTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2F9A006327C9A42600BEA4A2 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		B976673B27D6679C003D8646 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		B98EC57D27B72A64003F99A3 /* InterMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B98EC58027B72A64003F99A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B98EC58227B72A64003F99A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		B98EC59A27BB2925003F99A3 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		B98EC59E27BFE61A003F99A3 /* HearderViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearderViewTableViewCell.swift; sourceTree = "<group>"; };
 		B98EC5A227C526FC003F99A3 /* InternaMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternaMovies.swift; sourceTree = "<group>"; };
+		B9BB03E727EA92F400375457 /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,11 +72,13 @@
 			children = (
 				B98EC58027B72A64003F99A3 /* AppDelegate.swift */,
 				B98EC58227B72A64003F99A3 /* SceneDelegate.swift */,
+				B98EC59427B9B28B003F99A3 /* ListMovieInter.swift */,
 				B98EC59E27BFE61A003F99A3 /* HearderViewTableViewCell.swift */,
+				B976673B27D6679C003D8646 /* CollectionViewCell.swift */,
 				B98EC5A227C526FC003F99A3 /* InternaMovies.swift */,
 				B98EC59A27BB2925003F99A3 /* MovieCell.swift */,
-				B98EC59427B9B28B003F99A3 /* ListMovieInter.swift */,
 				B98EC58427B72A64003F99A3 /* ViewController.swift */,
+				B9BB03E727EA92F400375457 /* SelfSizedTableView.swift */,
 				B98EC58627B72A64003F99A3 /* Main.storyboard */,
 				B98EC58B27B72A65003F99A3 /* LaunchScreen.storyboard */,
 				B98EC59627B9B7BF003F99A3 /* Assets.xcassets */,
@@ -156,6 +162,8 @@
 			files = (
 				B98EC58527B72A64003F99A3 /* ViewController.swift in Sources */,
 				B98EC59527B9B28B003F99A3 /* ListMovieInter.swift in Sources */,
+				B9BB03E827EA92F400375457 /* SelfSizedTableView.swift in Sources */,
+				B976673C27D6679C003D8646 /* CollectionViewCell.swift in Sources */,
 				B98EC5A027BFE61A003F99A3 /* HearderViewTableViewCell.swift in Sources */,
 				B98EC58127B72A64003F99A3 /* AppDelegate.swift in Sources */,
 				B98EC59B27BB2925003F99A3 /* MovieCell.swift in Sources */,

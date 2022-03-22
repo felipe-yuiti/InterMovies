@@ -12,20 +12,6 @@ struct HeardOnTable{
     var subTitle: String
 }
 
-class SelfSizedTableView: UITableView {
-    var maxHeight: CGFloat = UIScreen.main.bounds.size.height
-    
-    override func reloadData() {
-        super.reloadData()
-        self.invalidateIntrinsicContentSize()
-        self.layoutIfNeeded()
-    }
-    
-    override var intrinsicContentSize: CGSize {
-        let height = min(contentSize.height, maxHeight)
-        return CGSize(width: contentSize.width, height: height)
-    }
-}
 
 class ViewController: UIViewController {
     
@@ -37,9 +23,9 @@ class ViewController: UIViewController {
     let searchController = UISearchController(searchResultsController: nil)
     
     let data = ["acao","aventura","drama","suspense", "terror"]
-    var hearder = [HeardOnTable(title: "feijao", subTitle: "lulu"),
-                   HeardOnTable(title: "arroz", subTitle: "lulu"),
-                   HeardOnTable(title: "salada", subTitle: "lulu")]
+    var hearder = [HeardOnTable(title: "feijao", subTitle: "roxo"),
+                   HeardOnTable(title: "arroz", subTitle: "com feijao"),
+                   HeardOnTable(title: "salada", subTitle: "de tomate")]
     var heightOfHearder: CGFloat = 44
     
     private func setupTableView() {
@@ -68,6 +54,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listaDeFilmesFiltradas.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("linha\(indexPath.row),section\(indexPath.section)")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -104,4 +94,18 @@ extension ViewController: UISearchResultsUpdating {
         
         tableView.reloadData()
     }
+}
+
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Detalhes", for: indexPath) as! CollectionViewCell
+        return collectionCell
+    }
+    
+    
+    
 }
