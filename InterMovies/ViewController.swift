@@ -31,6 +31,12 @@ class ViewController: UIViewController {
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
+        tableView.estimatedSectionHeaderHeight = 180
+        tableView.sectionFooterHeight = 0
+        tableView.isScrollEnabled = false
         let nib = UINib(nibName: "HeaderView", bundle: nil)
         tableView.register(nib, forHeaderFooterViewReuseIdentifier: "HeaderView")
     }
@@ -53,7 +59,8 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listaDeFilmesFiltradas.count
+//        return listaDeFilmesFiltradas.count
+        return 10
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -61,22 +68,23 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return hearder.count
+//        return hearder.count
+        return 1
     }
     
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
+
         let hearderView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderView") as! HearderViewTableViewCell
         hearderView.leftHearderLabel.text = hearder[section].title
         hearderView.rightHearderLabel.text = hearder[section].subTitle
-        
+
         return hearderView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Continuarassistindo", for: indexPath) as! MovieCell
-        cell.movieLabel.text = listaDeFilmesFiltradas[indexPath.row]
+        cell.movieLabel.text = listaDeFilmesFiltradas[0]
         cell.timeLabel.text = "Tempo restante"
         return cell
     }
@@ -92,20 +100,27 @@ extension ViewController: UISearchResultsUpdating {
             listaDeFilmesFiltradas = listaDeFilmes
         }
         
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+//            self.tableView.reloadData()
+//        }
+        
     }
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Detalhes", for: indexPath) as! CollectionViewCell
-        return collectionCell
-    }
-    
-    
-    
-}
+//extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 3
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Detalhes", for: indexPath) as! CollectionViewCell
+//        return collectionCell
+//    }
+//
+//
+//
+//}
